@@ -1,6 +1,7 @@
 import feedparser
 import logging
 import json
+from requests.exceptions import Timeout
 from requests_cache import CachedSession
 
 from django.conf import settings
@@ -20,18 +21,25 @@ def get_feed(feed_url):
     Return feed parsed feed
     """
 
-    response = cached_request.get(
-        feed_url,
-        timeout=requests_timeout
-    )
+    try:
+        response = cached_request.get(feed_url, timeout=requests_timeout)
 
-    content_type = response.headers['Content-Type']
+        content_type = response.headers['Content-Type']
 
-    if 'rss' in content_type.lower():
-        content = feedparser.parse(response.text)
-    elif 'json' in content_type.lower():
-        content = json.loads(response.text)
-    else:
-        raise TypeError('Unknown content type: {}'.format(content_type))
+        if 'rss' in content_type.lower():
+            content = feedparser.parse(response.text)
+        elif 'json' in content_type.lower():
+            content = json.loads(response.text)
+        else:
+            raise TypeError('Unknown content type: {}'.format(content_type))
+
+    except Timeout as timeout_error:
+        logger.warning(
+            'Attempt to get feed timed out after {}. Message: {}'.format(
+                requests_timeout,
+                str(timeout_error)
+            )
+        )
+        content = []  # Empty response
 
     return content
