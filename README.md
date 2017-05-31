@@ -1,4 +1,4 @@
-# www.ubuntu.com codebase
+# www.ubuntu.com codebase (test)
 
 [![Build Status](https://travis-ci.org/canonical-websites/www.ubuntu.com.svg?branch=master)](https://travis-ci.org/ubuntudesign/www.ubuntu.com)
 
