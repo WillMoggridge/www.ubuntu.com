@@ -1,213 +1,419 @@
 {% extends "cloud/base_cloud.html" %}
 {% load versioned_static  %}
-
 {% block title %}BootStack - your managed cloud | Ubuntu{% endblock %}
-
 {% block meta_description %}With BootStack, Canonical will build, support and manage your cloud for only $15 per host per day.{% endblock meta_description %}
-
-{% block second_level_nav_items %}
-<div class="strip-inner-wrapper">
-  {% include "templates/_nav_breadcrumb.html" with section_title="Cloud" page_title="Managed cloud"  %}
-</div>
-{% endblock second_level_nav_items %}
 
 {% block content %}
 
-<section class="row row-hero strip-aubergine no-border">
-  <div class="strip-inner-wrapper equal-height">
-    <div class="eight-col equal-height__item">
-      <h1>BootStack &mdash; your managed cloud with no lock-in</h1>
-      <div class="for-small" style="width: 10rem; margin: 1rem auto;"><img src="{{ ASSET_SERVER_URL }}a85abc9c-bootstack_hero_pictogram.svg" alt="Bootstrap illustration" /></div>
-      <p class="intro">BootStack is a managed service where the world-class team at Canonical build and operate your OpenStack cloud either on-premises or hosted.</p>
-      <p class="intro">We provide the in-house expertise to stand-up and scale your cloud. And, when you&rsquo;re ready, we will hand over operational control.</p>
-      <p><a href="/cloud/contact-us?product=managed-cloud" class="button--primary">Schedule a demo</a></p>
-    </div>
-    <div class="four-col last-col equal-height__item equal-height__align-vertically align-center not-for-small">
-      <p><img src="{{ ASSET_SERVER_URL }}a85abc9c-bootstack_hero_pictogram.svg" alt="Bootstrap illustration" /></p>
+<section class="p-strip--accent is-deep">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-8">
+        <h1 class="p-heading--two">Fully managed cloud, by Canonical</h1>
+        <p>BootStack, the fully managed cloud service from Canonical is the fastest path to a production private OpenStack cloud. Focus on your business while Canonical takes care of building and running your OpenStack cloud.</p>
+        <ul class="p-list">
+          <li class="p-list__item is-ticked">Fully managed cloud on your servers, at your location</li>
+          <li class="p-list__item is-ticked">Built in three weeks using a proven reference architecture</li>
+          <li class="p-list__item is-ticked">Customise the architecture in iterations based on workloads</li>
+          <li class="p-list__item is-ticked">Enterprise class SLA for the cloud </li>
+          <li class="p-list__item is-ticked">Your team has access to all machines at all times</li>
+          <li class="p-list__item is-ticked">Monitoring and log management integration</li>
+          <li class="p-list__item is-ticked">When you&rsquo;re ready, we will hand over the keys</li>
+        </ul>
+        <p>
+          <a href="{{ ASSET_SERVER_URL }}3465457b-Bootstack_datasheet.pdf" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Read the datasheet', 'eventLabel' : 'Bootstack datasheet - Top CTA' : undefined });" class="p-button--positive">Read the datasheet</a>&#8195;<a href="/cloud/contact-us?product=cloud-managed-cloud" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'Internal Link', 'eventAction' : 'Talk to us', 'eventLabel' : 'Bootstack - Top CTA' : undefined });" class="p-button--neutral">Talk to us</a>
+        </p>
+
+      </div>
+      <div class="col-4 u-vertically-center u-align--center u-hidden--small">
+        <img src="{{ ASSET_SERVER_URL }}c5838368-openstack-cloud.png" alt="OpenStack logo" />
+      </div>
     </div>
   </div>
 </section>
 
-<section class="row">
-  <div class="strip-inner-wrapper">
-    <h2>Learn about BootStack managed cloud</h2>
-    <ul class="no-bullets equal-height--vertical-divider">
-      <li class="four-col equal-height--vertical-divider__item">
-        <img src="{{ ASSET_SERVER_URL }}c8eb3c73-cloud-econonmics-webinar.png?w=300" alt="">
-        <h3>Learn why private open cloud makes financial sense</h3>
-        <p><a class="external" href="https://pages.ubuntu.com/QTS_webinar.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Managed cloud', 'eventLabel' : 'Watch the webinar Learn why Private Open Cloud Makes Financial Sense', 'eventValue' : undefined });">Watch the webinar<span hidden=""> Learn why private open cloud makes financial sense</span></a></p>
-      </li>
-      <li class="four-col equal-height--vertical-divider__item">
-        <img src="{{ ASSET_SERVER_URL }}5b16e994-webinar-2.png?w=300" alt="">
-        <h3>Run Windows workloads on BootStack</h3>
-        <p><a class="external" href="https://pages.ubuntu.com/Cloudbase-webinar.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Managed cloud', 'eventLabel' : 'Watch the webinar Run Windows workloads on BootStack', 'eventValue' : undefined });">Watch the webinar<span hidden=""> Run Windows workloads on BootStack</span></a></p>
-      </li>
-      <li class="four-col last-col equal-height--vertical-divider__item no-margin-bottom">
-        <img src="{{ ASSET_SERVER_URL }}04e03cfe-wwebinar-3.png?w=300" alt="">
-        <h3>Build a hyperconverged cloud with BootStack and Supermicro</h3>
-        <p><a class="external" href="https://pages.ubuntu.com/Supermicro_webinar.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Managed cloud', 'eventLabel' : 'Watch the webinar Build a hyperconverged cloud with BootStack and Supermicro', 'eventValue' : undefined });">Watch the webinar<span hidden=""> Build a hyperconverged cloud with BootStack and Supermicro</span></a></p>
-      </li>
-    </ul>
+<section class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>Economics, performance and reliability</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+      <h3 class="p-heading--four">Economics</h3>
+      <p>True CAPEX economics requires total automation. Efficient operations deliver the benefits of ownership over public cloud rental.</p>
+    </div>
+    <div class="col-3">
+      <h3 class="p-heading--four">Scale</h3>
+      <p>The largest cloud and web operations choose Ubuntu and Canonical. We know  what it means to operate complexity at scale and at speed.</p>
+    </div>
+    <div class="col-3">
+      <h3 class="p-heading--four">Efficiency</h3>
+      <p>Squeeze the most out of your space and servers with our fully converged reference architecture. The leading completely containerized OpenStack.</p>
+    </div>
+    <div class="col-3">
+      <h3 class="p-heading--four">Resilience</h3>
+      <p>High availability and resilience in storage and networking across the board underpins our BootStack SLA and your peace of mind.</p>
+    </div>
   </div>
 </section>
 
-<div class="row row-grey row-expertise">
-  <div class="strip-inner-wrapper">
-    <div class="twelve-col">
-      <h2>Your cloud, your site, our expertise</h2>
-    </div>
-    <div class="twelve-col">
-      <div class="four-col equal-height--vertical-divider__item clearfix">
-        <div class="inline-small align-center">
-          <img class="grid-list__img" src="{{ ASSET_SERVER_URL }}14cf6193-pictogram-reduce_costs-orange-hex.svg" alt="">
+<section class="p-strip is-deep is-bordered">
+  <div class="row">
+    <h2>Resources</h2>
+    <div class="p-divider">
+      <div class="col-4 p-divider__block">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header u-no-margin--bottom">
+            <img class="p-heading-icon__img p-heading-icon__img--small" src="{{ ASSET_SERVER_URL }}3769b4a7-webinar-icon.svg" />
+            <h3 class="p-heading-icon__title p-heading-icon__title--muted p-muted-heading">Webinar</h3>
+          </div>
+          <h2 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/QTS_webinar.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Managed cloud', 'eventLabel' : 'Watch the webinar Learn why Private Open Cloud Makes Financial Sense', 'eventValue' : undefined });">Why private open cloud makes financial&nbsp;sense</a></h2>
         </div>
-        <div class="no-margin-bottom">
-          <h3>Predictable costs</h3>
-        </div>
-        <p class="clear">Your cloud is built to your specifications, on dedicated hardware and priced in a predictable fashion. You don’t have to hire a team of experts or commit upfront investment.</p>
       </div>
-      <div class="four-col equal-height--vertical-divider__item clearfix">
-        <div class="inline-small align-center">
-          <img class="grid-list__img" src="{{ ASSET_SERVER_URL }}31c507a5-image-juju.svg" alt="">
+      <div class="col-4 p-divider__block">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header u-no-margin--bottom">
+            <img class="p-heading-icon__img p-heading-icon__img--small" src="{{ ASSET_SERVER_URL }}3769b4a7-webinar-icon.svg" />
+            <h3 class="p-heading-icon__title p-heading-icon__title--muted  p-muted-heading">Webinar</h3>
+          </div>
+          <h2 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/Cloudbase-webinar.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Managed cloud', 'eventLabel' : 'Watch the webinar Run Windows workloads on BootStack', 'eventValue' : undefined });">Run Windows workloads on BootStack</a></h2>
         </div>
-        <div class="no-margin-bottom">
-          <h3>Model your workloads with Juju</h3>
-        </div>
-        <p class="clear">Connect and deploy your business and software workloads using our award-winning service modelling tool, Juju.</p>
       </div>
-      <div class="four-col equal-height--vertical-divider__item clearfix last-col">
-        <div class="inline-small align-center">
-          <img class="grid-list__img" src="{{ ASSET_SERVER_URL }}878af602-pictogram-virtualisation-orange-hex.svg" alt="">
+      <div class="col-4 p-divider__block">
+        <div class="p-heading-icon">
+          <div class="p-heading-icon__header u-no-margin--bottom">
+            <img class="p-heading-icon__img p-heading-icon__img--small" src="{{ ASSET_SERVER_URL }}3769b4a7-webinar-icon.svg" />
+            <h3 class="p-heading-icon__title p-heading-icon__title--muted  p-muted-heading">Webinar</h3>
+          </div>
+          <h2 class="p-heading--four"><a class="p-link--external" href="https://pages.ubuntu.com/Supermicro_webinar.html" onclick="dataLayer.push({'event' : 'GAEvent', 'eventCategory' : 'External Link', 'eventAction' : 'Managed cloud', 'eventLabel' : 'Watch the webinar Build a hyperconverged cloud with BootStack and Supermicro', 'eventValue' : undefined });">Hyperconverged cloud with BootStack and&nbsp;Supermicro</a></h2>
         </div>
-        <div class="no-margin-bottom">
-          <h3>Easy network function virtualisation</h3>
-        </div>
-        <p class="clear">Develop and test your VNFs before deploying them into a production OpenStack cloud.</p>
       </div>
     </div>
-
-    <div class="twelve-col">
-      <div class="four-col equal-height--vertical-divider__item clearfix">
-        <div class="inline-small align-center">
-          <img class="grid-list__img" src="{{ ASSET_SERVER_URL }}b35c8ec0-storage.svg" alt="">
-        </div>
-        <div class="no-margin-bottom">
-          <h3>Cloud native storage</h3>
-        </div>
-        <p class="clear">Embed the proven software‐defined storage (SDS) technologies like Ceph, NexentaEdge, Swift and SwiftStack.</p>
-      </div>
-
-      <div class="four-col equal-height--vertical-divider__item clearfix">
-        <div class="inline-small align-center">
-          <img class="grid-list__img" src="{{ ASSET_SERVER_URL }}dbfe22f3-pictogram-certification-orange-hex.svg" alt="">
-        </div>
-        <div class="no-margin-bottom">
-          <h3>Guaranteed availability and quality</h3>
-        </div>
-        <p class="clear">Our expertise, based on the management of hundreds of clouds, is backed up by a clear SLA and regular independent audits for quality assurance.</p>
-      </div>
-
-      <div class="four-col equal-height--vertical-divider__item clearfix last-col">
-        <div class="inline-small align-center">
-          <img class="grid-list__img" src="{{ ASSET_SERVER_URL }}921119ff-pictogram-training-orange-hex.svg" alt="">
-        </div>
-        <div class="no-margin-bottom">
-          <h3>Complete control and no vendor lock-in</h3>
-        </div>
-        <p class="clear">Your team can access every tool and every machine — and we can transfer operations to you on demand.</p>
-      </div>
-
-    </div>
-
-    <div class="twelve-col">
-      <p><a href="/cloud/contact-us?product=managed-cloud" class="button--primary">Schedule a demo</a></p>
-    </div>
-  </div>
-</div>
-
-<section class="row strip-light">
-  <div class="strip-inner-wrapper">
-    <div>
-      <h2 class="twelve-col muted-heading">BootStack is trusted by these enterprises and telcos</h2>
-    </div>
-    <ul class="inline-logos">
-      <li class="inline-logos__item">
-        <img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}481063cd-pccw.svg?w=160" alt="PCCW logo">
-      </li>
-      <li class="inline-logos__item">
-        <img class="" style="max-height: 8rem; vertical-align: middle;" src="{{ ASSET_SERVER_URL }}2e38f398-uct.svg?w=350" alt="UCT logo">
-      </li>
-      <li class="inline-logos__item">
-        <img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}25de1877-Tele2.svg?w=160" alt="Tele2 logo">
-      </li>
-    </ul>
-    <ul class="inline-logos">
-      <li class="inline-logos__item">
-        <img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}507a0979-B_Voidbridge_Primary_Master_Logo_3D_RGB-1024x283.jpg?w=160" alt="Voidbridge logo">
-      </li>
-      <li class="inline-logos__item">
-        <img class="inline-logos__image" src="{{ ASSET_SERVER_URL }}ff4e18ac-mimedia_logo_lrg.png?w=160" alt="Mimedia logo">
-      </li>
-    </ul>
   </div>
 </section>
 
-<section class="row no-border strip-light">
-  <div class="strip-inner-wrapper">
-    <h2 class="seven-col no-margin">Get a BootStack managed cloud in three easy steps</h2>
-    <ol class="list-stepped twelve-col">
-      <li class="list-stepped__item">
-        <div class="six-col">
-          <h3 class="list-stepped__title">We <strong>build</strong> your cloud</h3>
-          <p>Together, we design your cloud to the required size and specifications &mdash; on your site, in your datacentre or hosted with one of our partners.</p>
-        </div>
-        <div class="prepend-one four-col last-col align-center not-for-small">
-          <img src="{{ ASSET_SERVER_URL }}4287c2b2-transfer.svg" alt="" width="134">
-        </div>
-      </li>
-      <li class="list-stepped__item">
-        <div class="six-col">
-          <h3 class="list-stepped__title">We <strong>operate</strong> your cloud</h3>
-          <p>Our OpenStack experts take full responsibility for the management, monitoring and 24x7 availability of your new cloud. The hardware and software are covered by proactive maintenance too.</p>
-        </div>
-        <div class="prepend-one four-col last-col align-center not-for-small">
-          <img src="{{ ASSET_SERVER_URL }}43798107-Laptop_4px.svg" alt="" width="134" />
-        </div>
-      </li>
-      <li class="list-stepped__item twelve-col">
-        <div class="six-col">
-          <h3 class="list-stepped__title">We <strong>transfer</strong> control</h3>
-          <p>If you decide to take the cloud in-house, we will train your team on its operations to ensure a smooth handover.</p>
-        </div>
-        <div class="prepend-one four-col last-col align-center not-for-small picto-transfer">
-          <img src="{{ ASSET_SERVER_URL }}e96658e8-transfer_4px.svg" alt="" width="160" />
-        </div>
-      </li>
-    </ol>
+
+<section class="p-strip--light is-deep is-bordered">
+  <div class="row">
+    <div class="u-equal-height">
+      <div class="col-7">
+        <h2>Security trusted by the OpenStack majority</h2>
+        <p>Canonical, a founding member of OpenStack, provides security updates for thousands production OpenStack clouds worldwide.</p>
+        <p>The leading OpenStack and public cloud experts choose Ubuntu &mdash; that&rsquo;s why you should talk to us about efficient OpenStack operations at scale.</p>
+      </div>
+      <div class="col-4 prefix-1">
+        {% include "cloud/shared/_openstack-pie-chart.html" %}
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="row no-border">
-  <div class="strip-inner-wrapper equal-height--vertical-divider">
-    <div class="twelve-col">
-      <h2>BootStack can be customised to your requirements</h2>
+
+<section class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <h2>Fits your hybrid cloud strategy</h2>
+      <p>We recommend a hybrid cloud strategy. Canonical is a leading partner for all major public clouds, so we deliver neutral advice for both private and public operations. The right location for a workload should be driven by economics, not habit.</p>
+      <p >Give yourself the freedom to choose.</p>
     </div>
-    <div class="equal-height--vertical-divider__item four-col">
-      <div class="four-col">
-        <h3>Hosted BootStack</h3>
-        <p>We have chosen QTS and eShelter as a hosted option for BootStack worldwide, providing the highest performing dedicated cloud infrastructure available. Their customisation options enable OpenStack to be used for provisioning bare metal as well as virtual machines from datacentres around the world.</p>
-        <p><a class="external" href="https://insights.ubuntu.com/2016/08/22/qts-and-canonical-unveil-private-fully-managed-openstack-cloud/">Read the QTS press release</a></p>
-      </div>
+  </div>
+  <div class="row u-equal-height">
+    <div class="col-6 p-card">
+      <h4>Fully managed OpenStack</h4>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">Controlled density and performance</li>
+        <li class="p-list__item is-ticked">Containers for bare-metal speed</li>
+        <li class="p-list__item is-ticked">CAPEX for long term workloads</li>
+        <li class="p-list__item is-ticked">Regulatory compliant</li>
+        <li class="p-list__item is-ticked">Data sovereignty</li>
+        <li class="p-list__item is-ticked">Existing network</li>
+      </ul>
     </div>
-    <div class="equal-height--vertical-divider__item four-col">
-      <h3>BootStack Direct</h3>
-      <p>Whereas a Hosted BootStack leaves the operations to us, BootStack Direct guarantees the operation of the cloud goes directly to you, including training and support for your staff. We will get your OpenStack cloud up and running in days, preparing your team to become OpenStack operations experts.</p>
-      <p><a class="external" href="https://ubuntu.cloud/wp-content/uploads/2016/02/e843/Datasheet_Bootstack_your_Big_Data_Cloud_2015_Alexia_WEB-AW.pdf">Download the BootStack Direct brochure</a></p>
+    <div class="col-6 p-card">
+      <h4>AWS, Azure, Google, Oracle, Rackspace, SoftLayer</h4>
+      <ul class="p-list">
+        <li class="p-list__item is-ticked">Elasticity for highly variable load</li>
+        <li class="p-list__item is-ticked">Many regions for low latency</li>
+        <li class="p-list__item is-ticked">Choice of providers</li>
+        <li class="p-list__item is-ticked">OPEX as needed</li>
+        <li class="p-list__item is-ticked">Network isolation</li>
+        <li class="p-list__item is-ticked">Potential for uneven cloud performance</li>
+      </ul>
     </div>
-    <div class="equal-height--vertical-divider__item four-col last-col">
-      <h3>BootStack for Kubernetes</h3>
-      <p>Whether you want to orchestrate your container cluster on top of your OpenStack cloud or other substrate, we’ll build and operate it for you using the Canonical Distribution of Kubernetes. Focus on your applications not infrastructure.</p>
-      <p><a href="/cloud/kubernetes">Learn more about the Canonical Distribution of Kubernetes&nbsp;›</a></p>
+  </div>
+</section>
+
+<section class="p-strip is-deep is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="p-muted-heading u-align--center">BootStack fully managed cloud customers</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul class="p-inline-images">
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}01ed776c-veritas.svg" alt="Veritas logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}66bc9135-logo-lexisnexis.png" alt="LexisNexis logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}25de1877-Tele2.svg" alt="Tele2 logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}d0b7aa28-logo-deutsche-telekom.png" alt="Deutsche Telekom logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}481063cd-pccw.svg" alt="PCCW logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}d56d0b96-Biznet-Gio.png" alt="Biznet Gio logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}ff4e18ac-mimedia_logo_lrg.png" alt="Mimedia logo" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}507a0979-Voidbridge.jpg" alt="Voidbridge" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}7bf5e46b-fibernet-logo-sm-blk_260x47.png" alt="Fibernet Data Centers" />
+        </li>
+        <li class="p-inline-images__item">
+          <img src="{{ ASSET_SERVER_URL }}7dfdecc2-cogeco-logo_colour.png" alt="Cogeco Peer 1" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light is-deep">
+  <div class="row">
+    <div class="col-12">
+      <h2>Your data centre&hellip;</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <ul class="p-matrix is-trisected">
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Predictable CAPEX and OPEX</h3>
+            <p class="p-matrix__desc">Dedicated hardware is the most cost-effective for long-term workloads. BootStack operations costs are predictable, and the benefits of density accrue to your bottom line directly.</p>
+          </div>
+          </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Elasticity and agility</h3>
+            <p class="p-matrix__desc">We scale your cloud on demand. Just call to let us know there are additional racks in the DC. We’ll remotely test the hardware and expand your OpenStack to take advantage of the new capacity with zero down time.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">No distractions</h3>
+            <p class="p-matrix__desc">We operate the OpenStack, you run your apps. The real benefit of cloud is the ability to focus exclusively on your business, the things that differentiate you. Your private cloud should be the same &mdash; magical infrastructure on demand.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Cloud native storage</h3>
+            <p class="p-matrix__desc">Use proven software‐defined storage like Ceph, Nexenta Edge, and Swift in your BootStack. Or integrate your existing storage solution or SAN.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">No lock-in</h3>
+            <p class="p-matrix__desc">Your team can monitor every machine in the OpenStack cloud, and be trained to operate the cloud themselves. We will transfer operations to them on request.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Upgrades built-in</h3>
+            <p class="p-matrix__desc">As OpenStack evolves, your private cloud can be upgraded without down-time. Canonical guarantees upgrades to newer versions of OpenStack on request.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">App-store included</h3>
+            <p class="p-matrix__desc">Operate standard software workloads exactly the same way on public clouds and OpenStack. A large portfolio of open source solutions with best practices built&nbsp;in.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Directory integration</h3>
+            <p class="p-matrix__desc">Real-time login integration with your corporate Active Directory or LDAP infrastructure means better security and happier users.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">SDN flexibility</h3>
+            <p class="p-matrix__desc">Canonical works with the widest range of SDN’s, from Neutron OVS and flat provider networks to Cisco ACI, Calico and Contrail.</p>
+          </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip--light is-deep u-no-margin--top u-no-padding--top is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>&hellip;meets our OpenStack expertise</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <ul class="p-matrix is-trisected">
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Guaranteed SLA</h3>
+            <p class="p-matrix__desc">Our expertise, based on data from hundreds of clouds, underpins your Service Level Agreement. Our operations are certified, with regular independent audits.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">NFV ready</h3>
+            <p class="p-matrix__desc">BootStack is your fastest path to a modern VIM. As a VNF vendor, BootStack enables you to test your VNFs on the most widely used telco production OpenStack.</p>
+          </div>
+          </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Security</h3>
+            <p class="p-matrix__desc">Operated to the high standard of Canonical&rsquo;s own production OpenStack, supporting critical public services for 60m users and devices.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Full stack support</h3>
+            <p class="p-matrix__desc">As the publisher of Ubuntu, Canonical uniquely supports the full stack. Complex problems in cloud infrastructure require analysis and fixes all the way down to the kernel. With us, there are no loose ends.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Log aggregation</h3>
+            <p class="p-matrix__desc">The BootStack team actively monitor your OpenStack 24/7, providing observability, alerting, capacity planning and continuous service checks to ensure your cloud is healthy and stays that way.</p>
+          </div>
+        </li>
+        <li class="p-matrix__item">
+          <div class="p-matrix__content">
+            <h3 class="p-matrix__title p-heading--five">Transfer support</h3>
+            <p class="p-matrix__desc">Canonical offers training and on-premise Cloud Reliability Engineers to smooth your transition to internal operations when requested. Trust us to get you started in the best possible way.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p><a href="/cloud/contact-us?product=cloud-managed-cloud" class="p-button--positive">Schedule a demo</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip strip-light is-bordered">
+  <div class="row">
+    <div class="col-12">
+      <h2>Get BootStack &mdash; OpenStack managed cloud in 3 steps</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ol class="p-list-step">
+        <li class="p-list-step__item">
+          <div class="row">
+            <div class="col-6">
+              <h3 class="p-list-step__title">
+                <span class="p-list-step__bullet">1</span>
+                We <strong>build</strong> your cloud
+              </h3>
+              <p>Together, we <a href="/cloud/foundation-cloud">design your OpenStack cloud</a> based on your hardware, scale, roadmap, applications and monitoring system. This happens on your site, in your datacentre or hosted at a third-party facility.</p>
+            </div>
+            <div class="col-6 u-align--center u-hidden--small">
+              <img src="{{ ASSET_SERVER_URL }}4287c2b2-transfer.svg" alt="" width="134">
+            </div>
+          </div>
+        </li>
+        <li class="p-list-step__item">
+          <div class="row">
+            <div class="col-6">
+              <h3 class="p-list-step__title">
+                <span class="p-list-step__bullet">2</span>
+                We <strong>operate</strong> your cloud
+              </h3>
+              <p>We take responsibility for the remote management and 24/7 availability of your OpenStack. Your SLA covers uptime and performance. Your hardware and software are proactively monitored. Scale on demand with additional racks.</p>
+            </div>
+            <div class="col-6 u-align--center u-hidden--small">
+              <img src="{{ ASSET_SERVER_URL }}43798107-Laptop_4px.svg" alt="" width="134" />
+            </div>
+          </div>
+        </li>
+        <li class="p-list-step__item">
+          <div class="row">
+            <div class="col-6">
+              <h3 class="p-list-step__title">
+                <span class="p-list-step__bullet">3</span>
+                We <strong>transfer</strong> control
+              </h3>
+              <p>On request, we&rsquo;ll give you the keys. We offer training and a handover process with on-site cloud reliability engineers to ensure a smooth handover.</p>
+            </div>
+            <div class="col-6 u-align--center u-hidden--small">
+              <img style="margin-left: -2rem;" src="{{ ASSET_SERVER_URL }}e96658e8-transfer_4px.svg" alt="" width="160" />
+            </div>
+          </div>
+        </li>
+      </ol>
+      <p><a href="/cloud/contact-us?product=cloud-managed-cloud" class="p-button--positive">Free quote and architecture assessment</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-12">
+      <h2>Shape it to your needs</h2>
+    </div>
+  </div>
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Hosting partners</h3>
+      <p><a href="https://insights.ubuntu.com/2017/04/18/unitas-global-and-canonical-provide-fully-managed-enterprise-openstack/" class="p-link--external">Unitas Global</a>, <a href="https://insights.ubuntu.com/2016/08/22/qts-and-canonical-unveil-private-fully-managed-openstack-cloud/" class="p-link--external">QTS</a> and <a href="https://insights.ubuntu.com/2016/07/05/e-shelter-and-canonical-launch-joint-managed-openstack-private-cloud/" class="p-link--external">eShelter</a> are certified partners, trained to handle the physical BootStack operations.</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Build services</h3>
+      <p>We can build your cloud. Get started fast with our OpenStack reference architecture or a custom design to optimise your workloads.</p>
+      <p><a href="/cloud/foundation-cloud">OpenStack build service&nbsp;&rsaquo;</a></p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Fully managed Kubernetes</h3>
+      <p>Canonical will <a href="">build, operate and transfer a Kubernetes cluster</a> for you, on bare metal, OpenStack, VMware or public cloud.</p>
+      <p><a href="/cloud/kubernetes">Canonical Kubernetes&nbsp;&rsaquo;</a></p>
+    </div>
+  </div>
+</section>
+<section class="p-strip is-deep u-no-margin--top u-no-padding--top">
+  <div class="row p-divider">
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Enable containers</h3>
+      <p>Use <a href="https://linuxcontainers.org/" class="p-link--external">Linux Containers Project</a>, LXD, for pure-container guests in OpenStack. Faster to launch, with zero latency and amazing quality of service, LXD guests are a bridge between VMs and Docker.</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Add Docker</h3>
+      <p>Full support for Enterprise Docker on BootStack means you have a single support line for Ubuntu, OpenStack and Docker. Use tenant separation to partition your cluster between teams using Docker for devops.</p>
+    </div>
+    <div class="col-4 p-divider__block">
+      <h3 class="p-heading--four">Custom integration</h3>
+      <p>Integrate your OpenStack with existing storage SANs, network and SDN controllers, authentication systems like LDAP or Active Directory, and monitoring systems using our <a href="/cloud/foundation-cloud">professional services and consulting</a> teams.</p>
+    </div>
+  </div>
+</section>
+<section class="p-strip is-shallow u-no-padding--top">
+  <div class="row">
+    <div class="col-12">
+      <p><a href="/cloud/contact-us?product=cloud-managed-cloud" class="p-button--positive">Let&rsquo;s discuss your requirements</a></p>
     </div>
   </div>
 </section>
@@ -218,6 +424,6 @@
 {% block footer_extra %}
 <script src="{% versioned_static 'js/forms.js' %}"></script>
 <script>
-  forms.addSliders('.add-slider');
+forms.addSliders('.add-slider');
 </script>
 {% endblock footer_extra %}

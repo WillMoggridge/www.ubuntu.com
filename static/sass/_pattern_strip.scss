@@ -1,0 +1,9 @@
+@mixin ubuntu-p-strip {
+  @include ubuntu-p-strip;
+}
+
+@mixin ubuntu-p-strip {
+  [class^='p-strip'].is-x-shallow {
+    padding: 1.5rem 0;
+  }
+}

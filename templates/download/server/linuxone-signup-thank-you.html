@@ -1,10 +1,7 @@
-{% extends "download/_base_download-v1.html" %}
+{% extends "download/_base_download.html" %}
 
 {% block title %}Thank you | Ubuntu LinuxONE{% endblock %}
 
-{% block second_level_nav_items %}
-  {% include "templates/_nav_breadcrumb-v1.html" with section_title="Downloads" subsection_title="Server" page_title="Thank you"  %}
-{% endblock second_level_nav_items %}
 
 {% block content %}
 <div class="p-strip is-deep is-bordered">
@@ -19,7 +16,7 @@
   </div>
 </div>
 
-{% include "shared-v1/_thank_you_footer.html" %}
+{% include "shared/_thank_you_footer.html" %}
 
 {% endblock content %}
 {% block footer_extra %}

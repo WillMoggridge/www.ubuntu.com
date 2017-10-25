@@ -1,4 +1,4 @@
-{% extends "download/_base_download-v1.html" %}
+{% extends "download/_base_download.html" %}
 {% load versioned_static  %}
 
 {% block title %}
@@ -6,9 +6,6 @@ Thanks for downloading Ubuntu Server
 {% endblock %}
 {% block extra_body_class %}download-thankyou{% endblock %}
 
-{% block second_level_nav_items %}
-{% include "templates/_nav_breadcrumb-v1.html" with section_title="Downloads" subsection_title="Server" page_title="Thank you"  %}
-{% endblock second_level_nav_items %}
 
 {% block content %}
 <noscript>
@@ -20,40 +17,61 @@ Thanks for downloading Ubuntu Server
     <div class="col-8">
       <h1>Thank you for downloading Ubuntu Server</h1>
       {% if version and architecture %}
-      <p>Your download should start automatically. If it doesn&rsquo;t, <a href="http://releases.ubuntu.com/{{ version }}/ubuntu-{{ version }}-server-{{ architecture }}.iso">download now</a>.</p>
+      <p>Your download should start automatically. If it doesn&rsquo;t,
+        <a href="http://releases.ubuntu.com/{{ version }}/ubuntu-{{ version }}-server-{{ architecture }}.iso">
+          download now</a>.
+      </p>
       {% else %}
-      <p>You didn't pick a version or architecture, please <a href="/download/server/">select again</a>.</p>
+      <p>
+        You didn&rsquo;t pick a version or architecture, please
+        <a href="/download/server/">select again</a>.
+      </p>
       {% endif %}
     </div>
     <div class="col-4 u-vertically-center u-align--center">
-      <img src="{{ ASSET_SERVER_URL }}52d53696-picto-thankyou-midaubergine.svg" alt="smile" width="200" height="200" />
+      <img src="{{ ASSET_SERVER_URL }}52d53696-picto-thankyou-midaubergine.svg"
+        alt="smile" width="200" height="200" />
     </div>
   </div>
 </div>
 
+{% include "download/shared/_get_ebook_maas.html"%}
+
 <div class="p-strip is-shallow">
   <div class="row">
     <div class="col-8">
-      <h2>Your next steps with Ubuntu Server</h2>
-      <p>Use Ubuntu&rsquo;s tools to help you provision and manage your servers.</p>
+      <div>
+        <h2>Your next steps with Ubuntu Server</h2>
+        <p>
+          Use Ubuntu&rsquo;s tools to help you provision and manage your servers.
+        </p>
+      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-6 u-hidden--small">
-      <img src="{{ ASSET_SERVER_URL }}b89de9f4-feature.png" alt="Landscape load management" />
+      <img src="{{ ASSET_SERVER_URL }}b89de9f4-feature.png"
+        alt="Landscape load management" />
     </div>
     <div class="col-6">
       <h3>Server management with Landscape</h3>
       <ul class="p-list">
         <li class="p-list__item is-ticked">
-          Landscape is the leading management tool to deploy, monitor and manage your Ubuntu servers
+          <p>Landscape is the leading management tool to deploy, monitor and
+          manage your Ubuntu servers</p>
         </li>
         <li class="p-list__item is-ticked">
-          It features Autopilot, the fastest way to build an OpenStack cloud
+          <p>
+            Landscape supports livepatch so you can apply kernel patches and
+            security updates without having to reboot
+          </p>
         </li>
         <li class="p-list__item is-ticked">
-          Landscape is also available as part of Ubuntu Advantage, Canonical&rsquo;s world-class support service
+          <p>
+            Landscape is also available as part of Ubuntu Advantage,
+            Canonical&rsquo;s world-class support service
+          </p>
         </li>
       </ul>
       <p>
@@ -100,7 +118,7 @@ Thanks for downloading Ubuntu Server
         </div>
       </div>
       <p class="p-card__content">If you need some help installing Ubuntu, please check out our step-by-step guides.</p>
-      <p class="p-card__content"><a href="/download/server/install-ubuntu-server">Installation instructions for Ubuntu Server&nbsp;&rsaquo;</a></p>
+      <p class="p-card__content"><a class="p-link--external" href="https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-server">Installation instructions for Ubuntu Server</a></p>
     </div>
     <div class="col-4 p-card--highlighted">
       <div class="p-heading-icon">
@@ -126,7 +144,7 @@ Thanks for downloading Ubuntu Server
 </div>
 </div>
 
-{% include "shared-v1/contextual_footers/_contextual_footer.html"  with first_item="_download_server_installation" second_item="_download_server_guide" third_item="_download_verify_your_download" %}
+{% include "shared/contextual_footers/_contextual_footer.html"  with first_item="_download_verify_your_download" second_item="_download_server_guide" third_item="_download_helping_hands" %}
 
 {% endblock content %}
 {% block footer_extra %}
@@ -214,4 +232,99 @@ function chooseRandomMirror(mirrors) {
 }
 </script>
 
+<!-- marketo form dependencies -->
+<script src="{{ ASSET_SERVER_URL }}5d7e5bbf-jquery-2.2.0.min.js"></script>
+<script src="{{ ASSET_SERVER_URL }}d55f58bb-jquery.validate.js"></script>
+<script src="{{ ASSET_SERVER_URL }}ec520d10-XMLHttpRequest.min.js"></script>
+<script src="{{ ASSET_SERVER_URL }}4176b39e-serialize.js"></script>
+<script src="{{ ASSET_SERVER_URL }}6b7597df-event-listener-polyfill.js"></script>
+<!-- script -->
+<script>
+$("#mktoForm_1862").validate({
+  errorElement: "span",
+  errorClass: "mktFormMsg mktError",
+  onkeyup: false,
+  onclick: false,
+  onblur: false
+});
+
+/**
+* Given a form element, extract its data and its "action" target URL
+* and submit the form using Ajax
+*/
+backgroundSubmit = function(formElement, submitCallback) {
+  var request = new XMLHttpRequest();
+  var submitUrl = formElement.getAttribute('action');
+  var formData = serialize(formElement)
+
+  request.open("POST", submitUrl, true);
+
+  //Send the proper header information along with the request
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  // When request has finished, call the callback function
+  if (submitCallback) {
+    request.addEventListener(
+      'readystatechange',
+      function() {
+        if (this.readyState == 4) {
+          // Pass context and arguments on to submitCallback
+          submitCallback.apply(this, arguments);
+        }
+      }
+    );
+  }
+
+  // Send off the POST request
+  request.send(formData);
+}
+
+/**
+* After submit has happened
+* start download and send the user to the instructions page
+*/
+afterSubmit = function() {
+  // Now start the download
+  downloadFrame = document.createElement("iframe");
+  downloadFrame.setAttribute("src", "{{ ASSET_SERVER_URL }}05f610df-eBook_MAAS.pdf.zip");
+  downloadFrame.style.width = 0 + "px";
+  downloadFrame.style.height = 0 + "px";
+  document.body.insertBefore(downloadFrame, document.body.childNodes[0]);
+  // And redirect to the instructions page
+  window.setTimeout(
+    function() {
+      window.location.href = "/{{ url|default:'download/server/provisioning'}}#instructions";
+    },
+    1000
+  );
+}
+
+/**
+* Handler for a form submit event
+* to disable the normal submit, and instead use backgroundSubmit
+*/
+
+backgroundSubmitHandlerClosure = function($) {
+  return function(submitEvent) {
+    // Prevent normal submit
+    submitEvent.preventDefault ? submitEvent.preventDefault() : submitEvent.returnValue = false;
+    // Check form is valid
+    if ($(marketoForm).valid()) {
+      // Change the submit location
+      marketoForm.action = "https://app-sjg.marketo.com/index.php/leadCapture/save2"
+      // Submit the form in the background
+      backgroundSubmit(marketoForm, afterSubmit);
+    }
+  }
+}
+
+// Get the form
+marketoForm = document.getElementById('mktoForm_1862');
+
+// Attach the submit handler to the form
+marketoForm.addEventListener(
+  'submit',
+  backgroundSubmitHandlerClosure(jQuery)
+)
+</script>
 {% endblock footer_extra %}

@@ -1,0 +1,14 @@
+# Decommissioned sections (with specific messages)
+mobile(/contact-us|/developers|/devices|/features|/partners|/thank-you)?:
+    message: "Ubuntu for mobile is no longer supported"
+tv(/commercial-info|/contributors|/experience|/features-and-specs|/industry)?:
+    message: "Ubuntu TV is no longer supported"
+
+# Miscellaneous deleted pages (don't specify a message - fall back to the default)
+download/cloud/thank-you:
+products/mystory:
+register/informix-thankyou:
+register/informix:
+register/parallels-thankyou:
+register/parallels:
+register/zimbra:

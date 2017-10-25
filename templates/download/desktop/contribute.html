@@ -1,25 +1,24 @@
-{% extends "download/_base_download-v1.html" %}
+{% extends "download/_base_download.html" %}
 {% load versioned_static  %}
 
 {% block title %}Contribute to Ubuntu | Ubuntu{% endblock %}
 {% block extra_body_class %}contribute-to-ubuntu{% endblock %}
 
-{% block second_level_nav_items %}
-{% include "templates/_nav_breadcrumb-v1.html" with section_title="Downloads" subsection_title="Desktop" page_title="Contribute"  %}
-{% endblock second_level_nav_items %}
 
 {% block outer_content %}
 <div class="p-strip is-deep">
   <div class="row">
     <div class="col-9">
-      <h1>Help shape the future of Ubuntu</h1>
-      <p>Tell us what is most important to you, or <a href="/download/desktop/thank-you?version={{ version }}&amp;architecture={{ architecture }}">you can continue to the download&nbsp;&rsaquo;</a></p>
-      <noscript>
-        <p>Contributions require JavaScript. Please enable JavaScript if you want to contribute.</p>
-        {% if start_download %}
-        <p><a href="/download/desktop/thank-you?version={{ version }}&amp;architecture={{ architecture }}">Take me to the download&nbsp;&rsaquo;</a></p>
-        {% endif %}
-      </noscript>
+      <div>
+        <h1>Help shape the future of Ubuntu</h1>
+        <p>Tell us what is most important to you, or <a href="/download/desktop/thank-you?version={{ version }}&amp;architecture={{ architecture }}">you can continue to the download&nbsp;&rsaquo;</a></p>
+        <noscript>
+          <p>Contributions require JavaScript. Please enable JavaScript if you want to contribute.</p>
+          {% if start_download %}
+          <p><a href="/download/desktop/thank-you?version={{ version }}&amp;architecture={{ architecture }}">Take me to the download&nbsp;&rsaquo;</a></p>
+          {% endif %}
+        </noscript>
+      </div>
     </div>
   </div>
 
@@ -120,7 +119,7 @@
           <input type="hidden" name="cancel_return" value="http://{{ http_host }}/download/desktop/thank-you?version={{ version }}&amp;architecture={{ architecture }}">
 
           <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
-          <button type="submit" class="contribute__submit p-button--brand" tabindex="9">Pay with PayPal</button> {% if start_download %}
+          <button type="submit" class="contribute__submit p-button--positive" tabindex="9">Pay with PayPal</button> {% if start_download %}
           <a href="/download/desktop/thank-you?version={{ version }}&amp;architecture={{ architecture }}" class="contribute__skip" tabindex="11">Not now, take me to the download&nbsp;&rsaquo;</a> {% endif %}
         </div>
       </form>
@@ -254,11 +253,11 @@
 
     if (skip) {
       if (total == 0) {
-        skip.classList.add('button--primary');
-        submit.classList.add('hidden');
+        skip.classList.add('p-button--positive');
+        submit.classList.add('u-hidden');
       } else {
-        skip.classList.remove('button--primary');
-        submit.classList.remove('hidden');
+        skip.classList.remove('p-button--positive');
+        submit.classList.remove('u-hidden');
       }
     } else {
       // Disable if total is zero
